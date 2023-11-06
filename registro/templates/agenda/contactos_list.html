@@ -1,0 +1,32 @@
+<!-- En tu archivo contactos_list.html -->
+{% extends 'base.html' %}
+
+{% block title %}Lista de Contactos{% endblock %}
+
+{% block content %}
+<h1>Lista de Contactos</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Teléfono</th>
+            <th>Email</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody id="contactos-list">
+    {% for datos in datos %}
+    <tr>
+        <td>{{datos.nombre}}</td>
+        <td>{{datos.apellido}}</td>
+        <td>{{datos.telefono}}</td>
+        <td>{{datos.email}}</td>
+        <td><a href="{{datos.id}}" class="eliminar-contacto" >Eliminar</a></td>
+    </tr>
+{% endfor %}
+    </tbody>
+</table>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+{% endblock %}
